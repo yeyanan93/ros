@@ -1,0 +1,16 @@
+FROM nvidia/cuda:11.4.2-devel-ubuntu20.04
+
+MAINTAINER yayan.ye <yeyanan90@gmail.com>
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# ===================================================================================
+# ros1
+# ===================================================================================
+RUN apt-get update && \
+	apt-get install -y lsb-release && \
+        sh -c '. /etc/lsb-release && echo "deb https://mirrors.aliyun.com/ros/ubuntu/ `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list' && \
+        apt-get install -y curl && \
+        curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add - && \
+        apt-get update && \
+        apt-get install -y ros-noetic-desktop-full
