@@ -1,0 +1,32 @@
+# UTF-8
+$ sudo apt-get update && \
+       sudo apt-get install locales && \
+       sudo locale-gen en_US en_US.UTF-8 && \
+       sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 && \
+       export LANG=en_US.UTF-8
+# 更新软件列表
+$ sudo apt-get update
+# 安装curl gnupg2 lsb-release
+$ sudo apt-get install -y curl gnupg2 lsb-release
+# 更改源
+$ sudo sh -c 'echo "deb https://mirrors.aliyun.com/ros2/ubuntu/ `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
+# 设置keys
+$ sudo curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+# 更新软件列表
+$ sudo apt-get update
+# 安装ro2
+$ sudo apt-get install -y ros-galactic-desktop
+# 安装colcon build
+$ sudo apt-get update && \
+       sudo apt-get install -y \
+       build-essential \
+       cmake \
+       git \
+       python3-colcon-common-extensions \
+       python3-flake8 \
+       python3-pip \
+       python3-pytest-cov \
+       python3-rosdep \
+       python3-setuptools \
+       python3-vcstool \
+       wget
