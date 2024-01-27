@@ -1,0 +1,19 @@
+# 看显卡
+$ lspci 或者 $ lspci | grep -i vga
+# 查看类似以下的语句
+# 01:00.0 VGA compatible controller: NVIDIA Corporation Device 2882 (rev a1)
+# 记住类似2882数字
+
+# 登录https://admin.pci-ids.ucw.cz/mods/PC/10de?action=help?help=pci
+# 查询2882
+
+# 搜索关键字nvidia driver install
+
+$ sudo bash .run
+
+
+weixing
+tiankong90-
+
+github
+https://github.com/yeyanan93/ros
